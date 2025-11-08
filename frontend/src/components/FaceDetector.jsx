@@ -61,7 +61,7 @@ export default function FaceDetector({setSongs}) {
   // Fetch songs by mood
   const fetchSongsByMood = async (moodType) => {
     try {
-      const response = await axios.get(`http://localhost:3000/songs?mood=${moodType}`);
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/songs?mood=${mood}`);
       setSongs(response.data.songs);
       console.log('Fetched songs for:', moodType, response.data);
     } catch (err) {
